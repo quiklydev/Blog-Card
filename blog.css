@@ -1,0 +1,184 @@
+:root {
+    /* Color variables */
+    --color-1: #ff0000; /* Main background color */
+    --color-2: #00ff00; /* Secondary background color */
+    --color-3: #0000ff;
+    --color-4: #ffff00;
+    --color-5: #00ffff;
+    /* Text color variables */
+    --text-color-1: #fff; /* Main text color */
+    --text-color-2: #000000; /* Secondary text color */
+    --text-color-3: #fff;
+    --text-color-4: #000000;
+    --text-color-5: #000000;
+     /* Meta background color */
+     --meta-bg-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background color for meta section */
+}
+body {
+    /*body styles */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.blog-card {
+    /* blog card styles */
+    background-color: var(--color-1);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    animation: color-flash 50s infinite;
+    transform: scale(1);
+    position: relative;
+    color: var(--text-color-1);
+}
+@keyframes color-flash {
+    /* Animation styles */
+    0%, 20% {background-color: var(--color-1);/* Start with main background color */
+    color: var(--text-color-1);}  /* Start with main text color */
+    25%, 45% {background-color: var(--color-2); /* Transition to secondary background color */
+    color : var(--text-color-2);} /* Transition to secondary text color */
+    50%, 70% {background-color: var(--color-3);
+    color: var(--text-color-3);}
+    75%, 95% {background-color: var(--color-4);
+    color: var(--text-color-4);}
+    100% {background-color: var(--color-5);
+    color: var(--text-color-5);}
+}
+.blog-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.blog-card .img-container {
+    width: 50%;
+    max-height: 100%;
+    overflow: hidden;
+}
+.blog-card img.nature {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 400px;
+    transition: opacity 0.3s ease-in-out;
+}
+.blog-card:hover img.nature {
+    opacity: 0.85;
+}
+.blog-card .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+.blog-card .content h3 {
+    font-size: 1.25em;
+    margin: 0;
+}
+.blog-card .content p {
+    margin: 10px 0;
+}
+.blog-card .tag {
+    background-color: #3b82f6;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+.blog-card:hover .tag {
+    background-color: #1e3a8a;
+}
+.blog-card .meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+    color: var(--text-color-1);
+    background-color: var(--meta-bg-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.blog-card .meta .author {
+    font-weight: bold;
+}
+.blog-card .meta .date {
+    font-style: italic;
+    margin-left: 20px;
+}
+
+@media (max-width: 505px) {
+    .blog-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .blog-card .img-container {
+        width: 100%;
+        height: auto;
+    }
+    .blog-card img.nature {
+        width: 100%;
+        height: auto;
+        max-height: 960px;
+        object-fit: cover;
+    }
+    .blog-card .content {
+        padding: 10px;
+
+    }
+    .blog-card .content h3 {
+        font-size: 1.2em;
+    }
+    .blog-card .content p {
+        font-size: 0.9em;
+        margin: 5px 0;
+    }
+    .blog-card .meta {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+@media (min-width: 506px) {
+    .blog-card {
+        flex-direction: row; /* Display content side by side on larger screens*/
+        height: auto;
+        min-height: 800px;
+    }
+    .blog-card .img-container {
+        width: 50%;
+        max-height: none;
+        overflow: hidden; 
+    }
+    .blog-card img.nature {
+        width: 100%;
+        object-fit: contain;
+        height: auto;
+        max-height: none;
+    }
+    .blog-card .content {
+        width: 50%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px;
+        box-sizing: border-box;
+    }
+}
