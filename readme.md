@@ -8,6 +8,10 @@ You can view the live demo [here](https://quiklydev.github.io/Blog-Card/).
 - Responsive design for various screen sizes.
 - Animated color transitions with a smooth background color change.
 - Interactive hover effects for images and tags.
+- Mobile-first responsive layout.
+- Hover effect with smooth transitions.
+- ![Mobile Screenshot](assets/mobile.png)
+- ![Tablet Screenshot](assets/tablet.png)
 
 # Getting Started
 
