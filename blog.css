@@ -135,7 +135,8 @@ body {
         height: auto;
     }
     .blog-card img.nature {
-        max-height: 300px;
+        width: 100%;
+        max-height: none;
         object-fit: cover;
     }
     .blog-card .content {
@@ -158,11 +159,20 @@ body {
 /* Tablet styles */
 @media (min-width: 768px) and (max-width: 1024px) {
     .blog-card {
-        flex-direction: row;
-        min-height: 300px;
+        flex-direction: column;
+        min-height: auto;
         box-sizing: border-box;
     }
-    
+
+    .blog-card .img-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .blog-card img.nature {
+        max-height: none;
+        object-fit: cover;
+    }  
 }
 
 /* Desktop styles */
